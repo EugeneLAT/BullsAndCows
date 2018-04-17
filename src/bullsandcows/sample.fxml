@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="bullsandcows.Controller">
+    <top>
+        <HBox>
+            <Spinner fx:id="num1" max="9" min="0"/>
+            <Spinner fx:id="num2" max="9" min="0"/>
+            <Spinner fx:id="num3" max="9" min="0" prefHeight="25.0" prefWidth="136.0"/>
+            <Spinner fx:id="num4" max="9" min="0"/>
+            <Button minWidth="50" onAction="#go" text="Go"/>
+        </HBox>
+
+    </top>
+    <center>
+        <TableView fx:id="turnsTable">
+            <columns>
+            <TableColumn text="Turn #">
+                <cellValueFactory>
+                    <PropertyValueFactory property="turnNr"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Guess">
+                <cellValueFactory>
+                    <PropertyValueFactory property="guess"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Bulls">
+                <cellValueFactory>
+                    <PropertyValueFactory property="bulls"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Cows">
+                <cellValueFactory>
+                    <PropertyValueFactory property="cows"/>
+                </cellValueFactory>
+            </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>
